@@ -1,0 +1,19 @@
+def saisie_recur():
+    try:
+        x=int(input('give number '))
+        if x>0:return x
+        else: return saisie_recur()
+    except:return saisie_recur()
+def diviseur(a,b):
+    if a==b:return True
+    elif a<b:return False
+    else:return diviseur(a-b,b)
+def quo_recur(a, b):
+    if a < b:
+        return 0
+    else:
+        return 1 + quo_recur(a - b, b)
+a=saisie_recur()
+b=saisie_recur()
+print(diviseur(a,b))
+print(quo_recur(a,b))

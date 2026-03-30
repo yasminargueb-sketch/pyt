@@ -1,0 +1,13 @@
+def list_vers9_recurs(n,L=[]):
+    if n==9:
+        L.append(9) 
+        return L
+
+    elif n<9:return 'error'
+    else:
+        inv=(n%10)*10+n//10
+        L=L+[n,inv]
+        return list_vers9_recurs(abs(n-inv),L)
+n=63
+print('test')
+print(list_vers9_recurs(n))

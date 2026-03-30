@@ -1,0 +1,22 @@
+def input_number():
+    while 1:
+        try:
+            n = int(input("input positif number : "))
+            if n > 0:
+                return n
+        except: continue
+def is_perfect(n):
+    Sum_quo = 0
+    for i in range(1, n):
+        if n % i == 0:
+            Sum_quo += i
+    return Sum_quo == n
+def display_perfect_number(maxn):
+    print(f"Numbers perfect lower than  {maxn} are : ", end="")
+    for i in range(1, maxn):
+        if is_perfect(i):
+            print(i, end=" ") 
+n=input_number()
+print(is_perfect(n))
+maxn=input_number()
+display_perfect_number(maxn)

@@ -1,0 +1,21 @@
+def input_number():
+    while 1:
+        try:
+            n = int(input("Veuillez saisir un entier composé de 3 chiffres : "))
+            if 100 <= n <= 999: # Vérifie que le nombre est bien à trois chiffres
+                 return n
+        except:continue
+   
+def Armstrong(n): return ((n % 10) ** 3 + ((n // 10) % 10) ** 3 + (n // 100) ** 3) == n
+def est_armstrong():
+    for i in range(100, 1000):
+        if Armstrong(i):
+            print(i, end= " ")
+    
+def main():
+    n=input_number()
+    if Armstrong(n):
+        print ("{} is Armstrong number".format(n))
+    else: print("{} is not Armstrong number".format(n))
+    est_armstrong()
+main()

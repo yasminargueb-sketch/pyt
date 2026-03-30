@@ -1,0 +1,4 @@
+def pgcd_recurs(a,b):
+    if a==b:return a
+    elif a>b:return pgcd_recurs(a-b,b)
+    else:return pgcd_recurs(a,b-a)

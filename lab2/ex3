@@ -1,0 +1,24 @@
+def input_number():
+    while 1:
+        try:
+            n = int(input("Veuillez saisir un entier strictement positif : "))
+            if n > 0:
+                return n
+        except: continue
+def reverse_number (n):
+    inv = 0 
+    while n > 0: 
+        inv = inv * 10 + n % 10 
+        n //= 10 
+    return inv 
+def is_palindrome(n):
+    return n == reverse_number(n)
+def main():
+    n=input_number()
+    r=reverse_number(n)
+    print("reverse of the number {} is {} ".format(n,r))
+    if is_palindrome(n):
+        print(" The number {} is palindrome".format(n))
+    else: 
+        print(" The number {} is not palindrome".format(n))
+main()       

@@ -1,0 +1,11 @@
+def palindrome_recur(ch):
+    if len(ch)<=1:return True
+    elif ch[0]!=ch[-1]:return False
+    else:return palindrome_recur(ch[1:-1])
+def palindrome_recur2(chaine):
+    if len(chaine)<=1: return True
+    else: return chaine[0]==chaine[-1] and palindrome_recur2(chaine[1:-1])
+def anagramme(ch1,ch2):
+    if ch1==ch2=='' :return True
+    elif (len(ch1)>0 and(ch1[0]not in ch2 )) or ch1=='':return False
+    else:return anagramme(ch1[1:],ch2.replace(ch1[0],'',1))
