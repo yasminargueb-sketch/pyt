@@ -1,0 +1,28 @@
+while 1: 
+    try:
+        val = int(input("Three-digit number or 0 to stop: "))
+    except:continue
+    if val == 0:break
+    elif val in range(100, 1000):
+        nb += 1       
+        som += val    
+        if maxnb < val:
+            maxnb = val   
+        if minnb > val:
+            minnb = val   
+        break
+print("Maximum={} Minimum={} Average={:.3f}".format(maxnb, minnb, som/nb))
+for nb in range(minnb, maxnb + 1):  
+    U0, U1, U2 = nb // 100, (nb % 100) // 10, nb % 10  
+    print(U0, U1, U2, end='  ')
+
+    while 1: 
+        U3 = U0 + U1 + U2
+        if U3 < nb:
+            print(U3, end= ' ')
+            U0, U1, U2 = U1, U2, U3
+        elif U3 == nb: 
+            print(U3)
+            break
+        else:  
+            break

@@ -1,0 +1,10 @@
+text = input("Enter a text: ")
+count = 0
+for c in text:
+    if c == 'a' or c == 'e' or c == 'i' or c == 'o' or c == 'u' \
+       or c == 'A' or c == 'E' or c == 'I' or c == 'O' or c == 'U':
+        count += 1
+
+print(f"Number of vowels: {count}" )
+#or
+print("Number of vowels: {}".format(count))

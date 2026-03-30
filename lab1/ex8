@@ -1,0 +1,35 @@
+while True:
+    try:
+        a = float(input("first coefficient a: "))
+        b = float(input("second coefficient b: "))
+        c = float(input("third coefficient c: "))
+        break
+    except:continue
+        
+from math import sqrt
+
+if a == 0:
+    # first degre equation: b*x + c = 0
+    if b == 0:
+        #  constante equation: c = 0
+        if c == 0:
+            print("Zero equation (infinitely many solutions)")
+        else:
+            print("No solution")
+    else:
+        # Équation réellement du 1er degré (b != 0)
+        print("Unique solution:", -c / b)
+else:
+    # Équation réellement du 2nd degré (a != 0)
+    delta = b**2 - 4*a*c
+    if delta == 0:
+        print("One real solution:", -b / (2*a))
+    elif delta > 0:
+        rdelta = sqrt(delta)
+        print("Two real solution:", (-b - rdelta)/(2*a), "et", (-b + rdelta)/(2*a))
+    else:
+        # Deux solutions complexes
+        rdelta = sqrt(-delta)
+        x1 = complex(-b, -rdelta)
+        x2 = complex(-b, rdelta)
+        print("Two complex solutions:", x1/(2*a), "et", x2/(2*a))

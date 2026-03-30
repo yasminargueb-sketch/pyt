@@ -1,0 +1,27 @@
+while True:
+    try:
+        n = int(input("Enter an integer strictly greater than 2: "))
+        if n >2 : break
+        
+    except: continue
+
+# Save the original number
+original = n
+sum_digits = 0
+
+# Extract and sum all digits
+while n > 0:
+    digit = n % 10        # get the last digit
+    sum_digits += digit   # add it to the sum
+    n = n // 10           # remove the last digit
+
+# Display sum of digits
+print("Sum of digits:", sum_digits)
+
+# Test divisibility
+if original % sum_digits == 0:
+    print("{} is divisible by {}".format(original,sum_digits))
+    print("Output: Niven number")
+else:
+    print("{} is not divisible by {}".format(original,sum_digits))
+    print("Output: Not a Niven number")

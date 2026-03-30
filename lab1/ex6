@@ -1,0 +1,19 @@
+while True:
+    try:
+        n = int(input("Enter an integer strictly greater than 2: "))
+        if n >2 : break    
+    except: continue
+original = n
+reversed_num = 0
+
+# Reverse the digits
+while n > 0:
+    digit = n % 10            # get the last digit
+    reversed_num = reversed_num * 10 + digit
+    n = n // 10               # remove the last digit
+
+# Compare and display result
+if original == reversed_num:
+    print("The number is a palindrome.")
+else:
+    print("The number is not a palindrome.")
