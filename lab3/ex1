@@ -1,0 +1,29 @@
+def Input_number():
+    while 1:
+        try:
+            N=int(input('donner N'))
+            if N%2==0 and N>2: return(N)
+        except:continue
+from random import randint
+def FillList(N):
+    L=[]
+    for i in range(N):
+        e=randint(0,1)
+        L[i].append(e)
+    return(L)
+def Balance(L):
+    nb0,nb1=L.count(0),L.count(1)
+    if nb0==nb1: print('L is already balanced')
+    elif nb0>nb1:
+        L+=[1]*(nb0-nb1)
+        print('To balance L, we added {} times the value 1.'.format(nb0-nb1))
+    else:
+        L+=[0]*(nb1-nb0)
+        print('To balance L, we added {} times the value 0'.format(nb1-nb0))
+
+def main():
+    N=Input_number()
+    L=FillList(N)
+    print(L)
+    Balance(L)
+main()
